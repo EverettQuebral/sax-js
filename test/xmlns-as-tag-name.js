@@ -1,10 +1,10 @@
 require(__dirname).test({
-  xml: '<xml:root/>',
+  xml: '<xmlns/>',
   expect: [
     [
       'opentagstart',
       {
-        name: 'xml:root',
+        name: 'xmlns',
         attributes: {},
         ns: {}
       }
@@ -12,10 +12,10 @@ require(__dirname).test({
     [
       'opentag',
       {
-        name: 'xml:root',
-        uri: 'http://www.w3.org/XML/1998/namespace',
-        prefix: 'xml',
-        local: 'root',
+        name: 'xmlns',
+        uri: '',
+        prefix: '',
+        local: 'xmlns',
         attributes: {},
         ns: {},
         isSelfClosing: true
@@ -23,9 +23,11 @@ require(__dirname).test({
     ],
     [
       'closetag',
-      'xml:root'
+      'xmlns'
     ]
   ],
   strict: true,
-  opt: { xmlns: true }
+  opt: {
+    xmlns: true
+  }
 })
